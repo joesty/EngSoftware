@@ -18,7 +18,7 @@ TP1 Engenharia de Software - Rede de contato entre empresas e estudantes interes
 * Tainan Henrique de Albuquerque - 2017074610 - tainanalbuquerque1@hotmail.com
 * Victor Freitas Borges - 2018122155 - victorfborges75@gmail.com
 
-#Linguagens adotadas
+# Linguagens adotadas
 * Front - JavaScripit - ReactJS
 * WebService/Api - Python - Django
 * Banco de dados Relacional - mySQL/postgresql/sqlite
