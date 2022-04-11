@@ -13,12 +13,12 @@ TP1 Engenharia de Software - Rede de contato entre empresas e estudantes interes
 * Página para descrição da empresa, com áreas de atuação e anúncio de vaga abertas
 
 # Intregrantes
-Artur Henrique Oliveira Mayrink - 2017002180 - arturmayrink@gmail.com
-Gustavo Ribeiro Alves Rodrigues - 2018130972 - gustavo.joesty@live.com
-Tainan Henrique de Albuquerque - 2017074610 - tainanalbuquerque1@hotmail.com
-Victor Freitas Borges - 2018122155 - victorfborges75@gmail.com
+* Artur Henrique Oliveira Mayrink - 2017002180 - arturmayrink@gmail.com
+* Gustavo Ribeiro Alves Rodrigues - 2018130972 - gustavo.joesty@live.com
+* Tainan Henrique de Albuquerque - 2017074610 - tainanalbuquerque1@hotmail.com
+* Victor Freitas Borges - 2018122155 - victorfborges75@gmail.com
 
 #Linguagens adotadas
-Front - JavaScripit - ReactJS
-WebService/Api - Python - Django
-Banco de dados Relacional - mySQL/postgresql/sqlite
+* Front - JavaScripit - ReactJS
+* WebService/Api - Python - Django
+* Banco de dados Relacional - mySQL/postgresql/sqlite
