@@ -25,13 +25,13 @@ TP1 Engenharia de Software - Rede de contato entre empresas e estudantes interes
 
 # Primeiras Features
 * Cadastro
-  - Aluno/Formados
+  - Aluno
   - Empresa
 * Login
 
 # Próximas Features
 * Editar Perfil
-  - Aluno/Formados
+  - Aluno
   - Empresa
 * Manifestar interesse em vaga
 * Postar Vaga
