@@ -26,11 +26,10 @@ TP1 Engenharia de Software - Rede de contato entre empresas e estudantes interes
 # Primeiras Features
 * Cadastro
   - Aluno/Formados
-  - Usuario/Empresa
-
+  - Empresa
 * Login
 
-# Possiveis Features
+# Proximas Features
 * Editar Perfil
   - Aluno/Formados
   - Empresa
