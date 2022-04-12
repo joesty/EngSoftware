@@ -22,3 +22,17 @@ TP1 Engenharia de Software - Rede de contato entre empresas e estudantes interes
 * Front - JavaScripit - ReactJS
 * WebService/Api - Python - Django
 * Banco de dados Relacional - mySQL/postgresql/sqlite
+
+# Primeiras Features
+* Cadastro
+  - Aluno/Formados
+  - Usuario/Empresa
+
+* Login
+
+# Possiveis Features
+* Editar Perfil
+  - Aluno/Formados
+  - Empresa
+* Manifestar interesse em vaga
+* Postar Vaga
