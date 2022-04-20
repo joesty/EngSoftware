@@ -19,9 +19,10 @@ TP1 Engenharia de Software - Rede de contato entre empresas e estudantes interes
 * Victor Freitas Borges - 2018122155 - victorfborges75@gmail.com
 
 # Linguagens adotadas
-* Front - JavaScripit - ReactJS
+* Front - JavaScripit - ReactJS v14.19.1
 * WebService/Api - Python - Django
 * Banco de dados Relacional - mySQL/postgresql/sqlite
+
 
 # Primeiras Features
 * Cadastro
@@ -35,3 +36,6 @@ TP1 Engenharia de Software - Rede de contato entre empresas e estudantes interes
   - Empresa
 * Manifestar interesse em vaga
 * Postar Vaga
+
+Scrum 
+![image](https://user-images.githubusercontent.com/68713622/164307857-33ecdafb-bcf3-4f7e-bcef-b7e5187951e3.png)
