@@ -1,0 +1,6 @@
+#ignorar essas pastas
+./front/node_modules
+
+
+#ignorar esses arquivos
+./front/package-lock.json
