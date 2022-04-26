@@ -1,6 +1,5 @@
 # Back-End
 
-<<<<<<< HEAD
 ## Criar um venv(um ambiente a parte) para as depêndencias do projeto (não obrigatório mas recomendado) (Ubuntu)
 
 python3 -m venv "nome da venv"
@@ -43,6 +42,8 @@ django
 https://docs.djangoproject.com/en/4.0/howto/
 
 https://www.django-rest-framework.org/tutorial/quickstart/
+
+
 =======
 
 ___
