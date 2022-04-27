@@ -1,6 +1,6 @@
 import React from 'react'
 import './login.css'
-
+import { Link } from 'react-router-dom'
 function Login() {
     return(
         <div className="main">
@@ -22,7 +22,7 @@ function Login() {
                         </div>
                         <div>
                             <p className="link">
-                                <a href="#">Esqueceu a Senha?</a>
+                                <a href="/password_recovery">Esqueceu a Senha?</a>
                             </p>
                         </div>
                         <button>Entrar</button>
