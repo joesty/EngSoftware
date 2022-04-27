@@ -1,0 +1,56 @@
+.main {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 90px 0 90px 0;
+    background-color:white;
+}
+  
+  .caixa{
+    border-color: black;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    top: 70%;
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(174, 177, 174);
+  }
+  
+  input{
+    width: 100%;
+    height: 50px;
+    box-shadow: inset 0px 0px 25px 0px rgb(238, 234, 234);
+    border-radius: 10px;
+  }
+  
+  .Senha{
+    padding-top: 20px;
+  }
+  
+  button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    height: 50px;
+    background-color: #18A0FB;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .caixa_de_texto{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .descrição{
+    font-size: 20px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
