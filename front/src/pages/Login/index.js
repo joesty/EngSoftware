@@ -25,10 +25,14 @@ function Login() {
                                 <a href="/password_recovery">Esqueceu a Senha?</a>
                             </p>
                         </div>
-                        <button>Entrar</button>
+                        <Link to="/home_page">
+                            <button onClick={{}}>
+                                Entrar
+                            </button>
+                        </Link>
                         <div>
                             <p className="link_cadastro">
-                                Ainda não tem conta? <a href="#">Cadastre-se</a>
+                                Ainda não tem conta? <a href="/user_cadaster">Cadastre-se</a>
                             </p>
                         </div>
                     </div>
