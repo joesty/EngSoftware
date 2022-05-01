@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Student from "../../models/student";
 
 function Copyright(props) {
   return (
@@ -33,6 +34,16 @@ export default function CadastrarEmpresa() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    const student = new Student(
+      data.get("nome"), 
+      data.get("sobrenome"),
+      data.get("cpf"),
+      data.get("Telefone"),
+      data.get("curso"),
+      data.get("email"),
+      data.get("password")
+    );
+    student.createUser();
     console.log({
       email: data.get("email"),
       password: data.get("password"),

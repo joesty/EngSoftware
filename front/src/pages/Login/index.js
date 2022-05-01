@@ -1,7 +1,9 @@
 import React from 'react'
 import './login.css'
-import { Link } from 'react-router-dom'
-function Login() {
+import { useHistory } from 'react-router-dom'
+
+const Login = (props) => {
+    const history = useHistory();
     return(
         <div className="main">
             <div className="sub-sub-main">
@@ -25,11 +27,11 @@ function Login() {
                                 <a href="/password_recovery">Esqueceu a Senha?</a>
                             </p>
                         </div>
-                        <Link to="/home_page">
-                            <button onClick={{}}>
+                        <p>
+                            <button onClick={() => history.push("/home_page")}>
                                 Entrar
                             </button>
-                        </Link>
+                        </p>
                         <div>
                             <p className="link_cadastro">
                                 Ainda não tem conta? <a href="/user_cadaster">Cadastre-se</a>

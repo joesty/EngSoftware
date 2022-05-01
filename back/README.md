@@ -46,6 +46,30 @@ https://www.django-rest-framework.org/tutorial/quickstart/
 
 =======
 
+
+## Back-End errors solutions
+
+manage.py migrate --run-syncdb
+
+or 
+
+python manage.py migrate --fake APPNAME zero
+python manage.py migrate APPNAME
+python manage.py makemigrations APPNAME
+python manage.py migrate APPNAME
+
+or
+
+remove migrations
+remove __pychache__
+python manage.py makemigrations --empty alias
+python manage.py makemigrations alias
+python manage.py migrate alias zero
+remove again migrations
+remove again __pycache__
+python manage.py makemigrations
+python manage.py migrate alias zero
+
 ___
 
 ## Estrutura de tabelas criadas no back-end

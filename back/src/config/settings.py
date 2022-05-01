@@ -26,11 +26,21 @@ SECRET_KEY = 'django-insecure-xymp2!kwdc-hwx4j44j%0cp#mp3!nowb&#^uo#5=+zv6tt14h4
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
 # Application definition
 
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_METHODS  = [
+     "DELETE" ,
+     "GET" ,
+     "OPTIONS" ,
+     "PATCH" ,
+     "POST" ,
+     "PUT" ,
+]
+
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +52,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
