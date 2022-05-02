@@ -21,9 +21,14 @@ pip install django
 
 pip install djangorestframework
 
+pip install django-cros-headers
+
 ## Iniciar o Servidor(API)
 dentro da pasta back rodar o codigo:
+
 python manage.py runserver
+
+python manage.py migrate --run-syncdb
 
 ## Admin page (com o servidor iniciado)
 http://127.0.0.1:8000/admin
@@ -33,9 +38,19 @@ email: admin@admin.com
 senha: @@@@@@@@
 
 ## Depêndenias
-python3-venv
+asgiref==3.5.0
 
-django
+backports.zoneinfo==0.2.1
+
+Django==4.0.4
+
+django-cors-headers==3.11.0
+
+djangorestframework==3.13.1
+
+pytz==2022.1
+
+sqlparse==0.4.2
 
 ## Documentação Django
 
