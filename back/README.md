@@ -102,3 +102,11 @@ As seguintes tabelas de banco de dados são criadas a partir da estrutura de bac
 | Enterprise | | | | | |
 | --- | --- | --- | --- | --- | --- | 
 | *id* | name | cnpj | password | email | phone_number |
+
+| Job_Opportunity | | | | | |
+| --- | --- | --- | --- | --- | --- | 
+| *id* | title | description | salary | enterprise_id | workload |
+
+| Interest |        |
+| --- | --- |
+| enterprise_id | user_id |
