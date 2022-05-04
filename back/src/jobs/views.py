@@ -14,4 +14,16 @@ class EnterpriseViewSet(viewsets.ModelViewSet):
         serializer_class = EnterpriseSerializer
  
 
+class CourseViewSet(viewsets.ModelViewSet):
+        queryset = Course.objects.all()
+        serializer_class = CourseSerializer
 
+
+class Job_OpportunityViewSet(viewsets.ModelViewSet):
+        queryset = Job_Opportunity.objects.all()
+        serializer_class = Job_OpportunitySerializer
+
+
+class InterestViewSet(viewsets.ModelViewSet):
+        queryset = Interest.objects.all()
+        serializer_class = InterestSerializer

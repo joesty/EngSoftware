@@ -15,4 +15,20 @@ class EnterpriseSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-  
+class CourseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Course
+        fields = '__all__'
+
+
+class Job_OpportunitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Job_Opportunity
+        fields = '__all__'
+
+
+class InterestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Interest
+        fields = '__all__'
+
