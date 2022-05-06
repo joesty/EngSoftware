@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Student from "../../models/student";
+import { useHistory } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -30,7 +31,10 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function CadastrarEmpresa() {
+export default function CadastrarAluno() {
+
+  const history = useHistory();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -48,6 +52,7 @@ export default function CadastrarEmpresa() {
       email: data.get("email"),
       password: data.get("password"),
     });
+    history.push("/cadastro_confirmado")
   };
 
   return (

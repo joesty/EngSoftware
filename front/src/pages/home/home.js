@@ -5,7 +5,7 @@ function Home() {
         <div className="main">
             Em Desenvolvimento
         </div>
-    )
+    );
 }
 
 export default Home

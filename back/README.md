@@ -26,11 +26,18 @@ pip install django-cros-headers
 ## Iniciar o Servidor(API)
 dentro da pasta back rodar o codigo:
 
+python manage.py makemigrations jobs
+
+python manage.py migrate
+
 python manage.py runserver
 
-python manage.py migrate --run-syncdb
+## Criar um usuario pra page admin:
+
+python manage.py createsuperuser
 
 ## Admin page (com o servidor iniciado)
+
 http://127.0.0.1:8000/admin
 
 email: admin@admin.com

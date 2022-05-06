@@ -37,10 +37,10 @@ class Enterprise(models.Model):
 class Job_Opportunity(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=100, null=False)
-    description = models.CharField(null=False)
+    description = models.CharField(max_length=1400, null=False)
     salary = models.DecimalField(max_digits=6, decimal_places=2, null=False)
     enterprise_id = models.ForeignKey("Enterprise", on_delete=models.CASCADE)
-    workload = models.IntegerField(max_length=2, null=False)
+    workload = models.IntegerField(null=False)
 
     def __str__(self):
         return self.id

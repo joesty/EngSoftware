@@ -4,6 +4,10 @@ import { useHistory } from 'react-router-dom'
 
 const Login = (props) => {
     const history = useHistory();
+
+    function handleClick(){
+        history.push("/home")
+    }
     return(
         <div className="main">
             <div className="sub-sub-main">
@@ -28,13 +32,13 @@ const Login = (props) => {
                             </p>
                         </div>
                         <p>
-                            <button onClick={() => history.push("/home_page")}>
+                            <button onClick={handleClick}>
                                 Entrar
                             </button>
                         </p>
                         <div>
                             <p className="link_cadastro">
-                                Ainda não tem conta? <a href="/user_cadaster">Cadastre-se</a>
+                                Ainda não tem conta? <a href="/cadastro">Cadastre-se</a>
                             </p>
                         </div>
                     </div>
