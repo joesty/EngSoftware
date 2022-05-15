@@ -22,6 +22,9 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register(r'students', StudentViewSet)
 router.register(r'enterprises', EnterpriseViewSet)
+router.register(r'enterprises', CourseViewSet)
+router.register(r'enterprises', Job_OpportunityViewSet)
+router.register(r'enterprises', InterestViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls))
