@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React /*, { useEffect, useState } */ from "react";
 import "./App.css";
 import { BrowserRouter } from "react-router-dom";
-import Login from "../src/pages/Login";
-import EsqueceuASenha from "./pages/Esqueceu-A-Senha";
+// import Login from "../src/pages/Login";
+// import EsqueceuASenha from "./pages/Esqueceu-A-Senha";
 import Routes from "./Routes";
-import api from "./services/api";
+// import api from "./services/api";
 
 function App() {
   return (
