@@ -426,10 +426,10 @@ const arrayVagas = [
 ];
 
 export default function FeedVagas() {
-    return (
-      <>
-        <Feed vagas={arrayVagas} />
-        <Footer />
-      </>
-    );
-  }
+  return (
+    <div>
+      <Feed vagas={arrayVagas} />
+      <Footer />
+    </div>
+  );
+}

@@ -1,9 +1,13 @@
-html,
-body {
-  min-height: 100%;
-}
-
-body {
+* {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+html,
+body,
+#root {
+  background-color: #ffffff;
+  height: 100%;
 }
