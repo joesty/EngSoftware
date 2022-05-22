@@ -1,5 +1,5 @@
 # Integração entre empresas e alunos da Universidade
-TP1 Engenharia de Software - Rede de contato entre empresas e estudantes interessados em ingressar no mercado
+TP1 Engenharia de Software - Rede de contato entre empresas e estudantes interessados em ingressar no mercado.
 
 # Objetivos
 * Praticar o desenvolvimento de códigos e técnicas de programação
@@ -22,7 +22,6 @@ TP1 Engenharia de Software - Rede de contato entre empresas e estudantes interes
 * Front - JavaScripit - ReactJS v14.19.1
 * WebService/Api - Python - Django
 * Banco de dados Relacional - mySQL/postgresql/sqlite
-
 
 # Primeiras Features
 * Cadastro
