@@ -8,6 +8,7 @@ import Cadastro from "./pages/cadastro";
 import CadastroConfirmado from "./pages/cadastro_confirmado";
 import Home from "./pages/home/home";
 import PaginaVaga from "./pages/Vaga/vaga";
+import Feed from "./pages/Feed/feed"
 
 /* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 export default () => {
@@ -43,6 +44,10 @@ export default () => {
 
       <Route exact path="/vaga">
         <PaginaVaga />
+      </Route>
+
+      <Route exact path="/feed">
+        <Feed />
       </Route>
     </>
   );
