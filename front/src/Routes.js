@@ -1,12 +1,13 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import EsqueceuASenha from "./pages/Esqueceu-A-Senha/index";
+import EsqueceuASenha from "./pages/Esqueceu-A-Senha";
 import Login from "./pages/Login";
 import CadastrarAluno from "./pages/Cadastrar-Aluno/cadastrar-aluno";
 import CadastrarEmpresa from "./pages/Cadastrar-Empresa/cadastrar-empresa";
 import Cadastro from "./pages/cadastro";
 import CadastroConfirmado from "./pages/cadastro_confirmado";
 import Home from "./pages/home/home";
+import PaginaVaga from "./pages/Vaga/vaga";
 
 /* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 export default () => {
@@ -38,6 +39,10 @@ export default () => {
 
       <Route exact path="/home">
         <Home />
+      </Route>
+
+      <Route exact path="/vaga">
+        <PaginaVaga />
       </Route>
     </>
   );
