@@ -1,5 +1,6 @@
 import React from "react";
 import Feed from "../../components/Feed";
+import Footer from "../../components/Footer";
 
 const arrayVagas = [
   {
@@ -425,8 +426,10 @@ const arrayVagas = [
 ];
 
 export default function FeedVagas() {
-  return (
-    <Feed vagas={arrayVagas} />
+    return (
+      <>
+        <Feed vagas={arrayVagas} />
+        <Footer />
+      </>
     );
-    
-}
+  }
