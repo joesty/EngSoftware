@@ -22,7 +22,12 @@ const Login = (props) => {
     const handleClick = async e => {
     try {
         const response = await api.post("/api/login/", { email, password });
-        console.log(response.data);
+        console.log(response.data["user"]);
+        const user = response.data["user"]
+        const token = response.data["token"]
+        localStorage.setItem('user', user);
+        localStorage.setItem("token", token)
+        console.log(localStorage.getItem("token"))
         history.push("/feed")
       } catch (err) {
           window.alert("Senha ou email incorretos")

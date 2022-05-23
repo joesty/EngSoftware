@@ -72,7 +72,6 @@ export default function FeedVagas() {
 
     return (
       <>
-        <button onClick={handleClick}> Cadastrar Vaga </button>
         <Feed vagas={arrayVagas} />
         <Footer />
       </>

@@ -27,16 +27,6 @@ class Job_OpportunityViewSet(viewsets.ModelViewSet):
         queryset = Job_Opportunity.objects.all()
         serializer_class = Job_OpportunitySerializer
 
-        def post(self, request, *args, **kwargs):
-            serializer = self.get_serializer(data=request.data)
-            enterprise = Enterprise.objects.filter(enterprise_id=request.data['enterprise_id'])
-            job = Job_Opportunity.objects.create_job(
-                request.data, enterprise['id']
-            )
-            job.save()
-            print(enterprise)
-            return enterprise['id']
-
 
 class InterestViewSet(viewsets.ModelViewSet):
         queryset = Interest.objects.all()
@@ -53,6 +43,7 @@ class RegisterStudentAPI(generics.GenericAPIView):
         user = User.objects.create_user(
             #serializer.data['username'],
             serializer.data['email'],
+            serializer.data['first_name'],
             serializer.data['password']
         )
 
@@ -86,6 +77,7 @@ class RegisterEnterpriseAPI(generics.GenericAPIView):
         user = User.objects.create_user(
             #serializer.data['username'],
             serializer.data['email'],
+            serializer.data['name'],
             serializer.data['password']
         )
 

@@ -12,12 +12,13 @@ from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
 ##Administrador da classe de autenticação
 class MyUserManager(BaseUserManager):
-    def create_user(self, email, password):
+    def create_user(self, email, name, password):
         if not email:
             raise ValueError("User must have an email address")
 
         user = self.model(
-            email = self.normalize_email(email)
+            email = self.normalize_email(email),
+            name = name
         )
 
         user.set_password(password)
@@ -25,13 +26,14 @@ class MyUserManager(BaseUserManager):
 
         return user
 
-    def create_superuser(self, email, password=None):
+    def create_superuser(self, email, name, password=None):
         """
         Creates and saves a superuser with the given email, date of
         birth and password.
         """
         user = self.create_user(
             email,
+            name,
             password=password,
         )
 
@@ -42,6 +44,7 @@ class MyUserManager(BaseUserManager):
 ##Classe customizada de autenticação, usando apenas e-mail
 class MyUser(AbstractBaseUser):
     email = models.EmailField(verbose_name='email address', max_length=255, unique=True)
+    name = models.CharField(max_length=255)
 
     USERNAME_FIELD = "email"
 

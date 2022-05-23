@@ -5,10 +5,6 @@ export default function Feed(props) {
 
   const history = useHistory();
 
-  function handleClick(){
-      history.push("/curriculo")
-  }
-
   return (
     <div className="exterior">
       <div className="titulo">
