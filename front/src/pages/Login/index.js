@@ -25,10 +25,11 @@ const Login = (props) => {
         console.log(response.data["user"]);
         const user = response.data["user"]
         const token = response.data["token"]
-        localStorage.setItem('user', user);
+        localStorage.setItem('user', user)
         localStorage.setItem("token", token)
-        console.log(localStorage.getItem("token"))
-        history.push("/feed")
+        localStorage.setItem("name", user["name"])
+        console.log(localStorage.getItem("name"))
+        history.push("/")
       } catch (err) {
           window.alert("Senha ou email incorretos")
       }
