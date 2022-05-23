@@ -5,17 +5,36 @@ import styles from "./Navbar.module.css";
 
 import ufmg from "../../img/UFMG.png";
 
+import { Button } from "@mui/material";
+
 export default function Navbar(/*props*/) {
   return (
-    <nav>
+    <nav class={styles.navbar}>
       <Conteiner>
-        <Link to="/">
-          <img src={ufmg} alt="UFMG Vagas" />
-        </Link>
-        <Link to="/login">Login</Link>
-        <Link to="/password_recovery">EsqueceuASenha</Link>
-        <Link to="/cadastro">Cadastro</Link>
-        <Link to="/">feed</Link>
+        <ul class={styles.list}>
+          <li class={styles.item}>
+            <Link to="/">
+              <img class={styles.img} src={ufmg} alt="UFMG Vagas" />
+            </Link>
+          </li>
+          <li class={styles.items} style={{ float: "right" }}>
+            <Button variant="text" href="/">
+              Vagas
+            </Button>
+            {/* <Link to="/">feed</Link> */}
+          </li>
+          <li class={styles.branco}>
+            <Button variant="contained" href="/login">
+              Login
+            </Button>
+            {/* <Link to="/login">Login</Link> */}
+          </li>
+          <li class={styles.branco}>
+            <Button variant="contained" href="/cadastro">
+              Cadastrar
+            </Button>
+          </li>
+        </ul>
       </Conteiner>
     </nav>
   );
