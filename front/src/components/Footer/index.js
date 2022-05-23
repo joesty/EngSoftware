@@ -1,10 +1,4 @@
 import React from "react";
-// import AppBar from "@mui/material/AppBar";
-// import Toolbar from "@mui/material/Toolbar";
-// import InstagramIcon from "@mui/icons-material/Instagram";
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-// import TelegramIcon from "@mui/icons-material/Telegram";
 import styles from "./Footer.module.css";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -13,7 +7,6 @@ import {
   FaFacebook,
   FaInstagram,
   FaWhatsapp,
-  FaTelegram,
   FaLinkedinIn,
 } from "react-icons/fa";
 

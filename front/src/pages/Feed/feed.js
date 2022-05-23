@@ -1,6 +1,5 @@
 import React from "react";
 import Feed from "../../components/Feed";
-import Footer from "../../components/Footer";
 
 const arrayVagas = [
   {
