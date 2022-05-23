@@ -14,7 +14,7 @@ import FeedVagas from "./pages/Feed/feed";
 export default () => {
   return (
     <>
-      <Route exact path="/">
+      <Route exact path="/login">
         <Login />
       </Route>
 
@@ -46,7 +46,7 @@ export default () => {
         <PaginaVaga />
       </Route>
 
-      <Route exact path="/feed">
+      <Route exact path="/">
         <FeedVagas />
       </Route>
     </>
