@@ -26,14 +26,14 @@ class MyUserManager(BaseUserManager):
 
         return user
 
-    def create_superuser(self, email, name, password=None):
+    def create_superuser(self, email, password=None):
         """
         Creates and saves a superuser with the given email, date of
         birth and password.
         """
         user = self.create_user(
             email,
-            name,
+            "Admin",
             password=password,
         )
 
@@ -134,15 +134,11 @@ class Job_Opportunity(models.Model):
     job_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=100, null=False)
     description = models.CharField(max_length=1400, null=False)
-    meal_ticket = models.CharField(max_length=20),
-    health_insurance = models.CharField(max_length=20)
-    transportation_vouchers = models.CharField(max_length=20)
-    study_incentive = models.CharField(max_length=20)
-    home_office_help = models.CharField(max_length=20)
     city_state = models.CharField(max_length=20)
     salary = models.DecimalField(max_digits=6, decimal_places=2, null=False)
     name = models.ForeignKey("Enterprise", on_delete=models.CASCADE)
     workload = models.IntegerField(null=False)
+    contact_email = models.EmailField(max_length=255)
 
     def __str__(self):
         return self.id
