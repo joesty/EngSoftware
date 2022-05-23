@@ -20,21 +20,19 @@ const Login = (props) => {
   //função para salvar no banco de dados
   const handleClick = async (e) => {
     try {
-        const response = await api.post("/api/login/", { email, password });
-        console.log(response.data["user"]);
-        const user = response.data["user"]
-        const token = response.data["token"]
-        localStorage.setItem('user', user)
-        localStorage.setItem("token", token)
-        localStorage.setItem("name", user["name"])
-        console.log(localStorage.getItem("name"))
-        history.push("/")
-      } catch (err) {
-          window.alert("Senha ou email incorretos")
-      }
+      const response = await api.post("/api/login/", { email, password });
+      console.log(response.data["user"]);
+      const user = response.data["user"];
+      const token = response.data["token"];
+      localStorage.setItem("user", user);
+      localStorage.setItem("token", token);
+      localStorage.setItem("name", user["name"]);
+      console.log(localStorage.getItem("name"));
+      history.push("/");
+    } catch (err) {
+      window.alert("Senha ou email incorretos");
     }
   };
-
   return (
     <div className="main">
       <div className="sub-sub-main">
