@@ -104,15 +104,23 @@ class Student(models.Model):
     def __str__(self):
         return self.name
 
+class EnterpriseManager(models.Manager):
+    def create_enterprise(self, id, name, cnpj, user=None):
+        enterprise = self.model(
+            id, name, cnpj, user
+        )
 
+        enterprise.save
+        return enterprise
 
 #empresas
 class Enterprise(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     name = models.CharField(max_length=20, null=False)
     cnpj = models.IntegerField(null=False, unique=True)
-    password = models.CharField(max_length=20, null=False)
-    email = models.EmailField(max_length=40, null=False)
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+
+    objects = EnterpriseManager()
 
     def __str__(self):
         return self.name

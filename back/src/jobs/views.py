@@ -83,17 +83,14 @@ class RegisterEnterpriseAPI(generics.GenericAPIView):
 
         user_response = UserSerializer(user, context=self.get_serializer_context()).data
 
-        student = Student.objects.create_student(
+        enterprise = Enterprise.objects.create_enterprise(
                 user_response["id"],
-                request.data["first_name"],
-                request.data["last_name"],
-                request.data["course"],
-                request.data["cpf"],
-                request.data["phone_number"],
+                request.data["name"],
+                request.data["cnpj"],
                 user_response["id"],
         )
         user.save()
-        student.save()
+        enterprise.save()
 
         return response.Response({
             "user": user_response,
