@@ -5,7 +5,7 @@ import PaginaVaga from "../../pages/Vaga/vaga";
 
 export default function Modal({ vaga }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  // const onClose = () => setIsModalVisible(false);
+
   return (
     <div className="vaga">
       <h1>

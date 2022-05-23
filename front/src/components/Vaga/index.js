@@ -3,11 +3,6 @@ import "./vaga.css";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import EmailIcon from "@mui/icons-material/Email";
 import CloseIcon from "@mui/icons-material/Close";
-// import LocalDiningIcon from "@mui/icons-material/LocalDining";
-// import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
-// import ComputerIcon from "@mui/icons-material/Computer";
-// import SchoolIcon from "@mui/icons-material/School";
-// import MedicalServicesIcon from "@mui/icons-material/MedicalServices";
 
 export default function Vaga({ vaga, onClose = () => {} }) {
   console.log(vaga);
