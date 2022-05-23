@@ -1,4 +1,41 @@
 .footer {
+  background-color: #ffffff;
+  color: black;
+  padding: 0.5em;
+  text-align: center;
+  border-style: solid none none none;
+  border-color: #efefef;
+}
+
+.social_list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.social_list li {
+  margin: 0 1em;
+}
+
+.social_list li:hover {
+  color: #313131;
+}
+
+.social_list svg {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.copy_right {
+  margin-top: 2em;
+}
+
+.copy_right spam {
+  font-weight: bold;
+  color: #313131;
+}
+
+/* .footer {
   position: absolute;
   bottom: 0;
   color: #fff;
@@ -181,4 +218,4 @@
     font-size: 0.88em;
     margin-right: 3px;
   }
-}
+} */

@@ -1,13 +1,21 @@
 import React from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import TelegramIcon from "@mui/icons-material/Telegram";
-import "./footer.css";
+// import AppBar from "@mui/material/AppBar";
+// import Toolbar from "@mui/material/Toolbar";
+// import InstagramIcon from "@mui/icons-material/Instagram";
+// import FacebookIcon from "@mui/icons-material/Facebook";
+// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+// import TelegramIcon from "@mui/icons-material/Telegram";
+import styles from "./Footer.module.css";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+
+import {
+  FaFacebook,
+  FaInstagram,
+  FaWhatsapp,
+  FaTelegram,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 function Copyright(props) {
   return (
@@ -27,66 +35,26 @@ function Copyright(props) {
   );
 }
 
-function Footer() {
+export default function Footer() {
   return (
-    <div className="footer">
-      <div className="tudoFooter">
-        <div>
-          <AppBar position="static">
-            <Toolbar
-              className="maeFooter"
-              style={{ backgroundColor: "#FFF", height: "4.5rem" }}
-            >
-              <img className="UFMG" src="../../img/UFMG.png" alt="UFMG" />
-              <div className="iconsFooter">
-                <div className="iconsFooter1">
-                  <a
-                    className="insta"
-                    href="https://www.instagram.com/cpe.jr"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    <InstagramIcon className="footersIcons2" />
-                  </a>
-                </div>
-                <div className="iconsFooter2">
-                  <a
-                    className="face"
-                    href="https://www.facebook.com/cpejr"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    <FacebookIcon className="footersIcons" />
-                  </a>
-                </div>
-                <div className="iconsFooter2">
-                  <a
-                    className="wpp"
-                    href="https://api.whatsapp.com/send?phone=5531988265561&text=Olá,%20meu%20amigo!"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    <WhatsAppIcon className="footersIcons" />
-                  </a>
-                </div>
-                <div className="iconsFooter2">
-                  <a
-                    className="emailFooter"
-                    href="mailto:tainanalbuquerque@cpejr.com.br?subject=Contato&body=Olá"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    <TelegramIcon className="footersIcons" />
-                  </a>
-                </div>
-              </div>
-              <Copyright sx={{ mt: 5 }} />
-            </Toolbar>
-          </AppBar>
-        </div>
-      </div>
-    </div>
+    <footer className={styles.footer}>
+      <ul className={styles.social_list}>
+        <li>
+          <FaFacebook />
+        </li>
+        <li>
+          <FaInstagram />
+        </li>
+        <li>
+          <FaWhatsapp />
+        </li>
+        <li>
+          <FaLinkedinIn />
+        </li>
+      </ul>
+      <p className={styles.copy_right}>
+        <span>UFMG vagas</span> &copy; 2022
+      </p>
+    </footer>
   );
 }
-
-export default Footer;
