@@ -8,10 +8,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Student from "../../models/student";
+// import Student from "../../models/student";
 import { useHistory } from "react-router-dom";
 import api from "../../services/api";
-
 
 function Copyright(props) {
   return (
@@ -34,27 +33,34 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function CadastrarAluno() {
-
   const history = useHistory();
 
-  const createUser = async e => {
-    const data = new FormData(e.currentTarget)
-    const first_name = data.get("nome")
-    const last_name = data.get("sobrenome")
-    const cpf =  data.get("cpf")
-    const phone_number = data.get("Telefone")
-    const course = data.get("curso")
-    const email = data.get("email")
-    const password = data.get("password")
+  const createUser = async (e) => {
+    const data = new FormData(e.currentTarget);
+    const first_name = data.get("nome");
+    const last_name = data.get("sobrenome");
+    const cpf = data.get("cpf");
+    const phone_number = data.get("Telefone");
+    const course = data.get("curso");
+    const email = data.get("email");
+    const password = data.get("password");
 
     try {
-      const response = await api.post("/api/register_student/", { first_name, last_name,email, course, password, cpf, phone_number });
+      const response = await api.post("/api/register_student/", {
+        first_name,
+        last_name,
+        email,
+        course,
+        password,
+        cpf,
+        phone_number,
+      });
       console.log(response.data);
-      history.push("/feed")
+      history.push("/feed");
     } catch (err) {
-        window.alert("Seu email e cpf devem ser únicos")
+      window.alert("Seu email e cpf devem ser únicos");
     }
-  }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -71,8 +77,8 @@ export default function CadastrarAluno() {
     );
     student.createUser();
     */
-    
-    createUser(event)
+
+    createUser(event);
 
     /*
     console.log({
