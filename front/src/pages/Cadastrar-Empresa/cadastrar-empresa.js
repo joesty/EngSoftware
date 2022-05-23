@@ -7,7 +7,10 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Enterprise from "../../models/enterprise"
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useHistory } from "react-router-dom"
+import api from "../../services/api";
 
 function Copyright(props) {
   return (
@@ -30,13 +33,46 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function CadastrarEmpresa() {
+
+  const history = useHistory();
+
+  const createEnterprise = async e => {
+    const data = new FormData(e.currentTarget)
+    const name = data.get("nome")
+    const cnpj =  data.get("cnpj")
+    const phone_number = data.get("Telefone")
+    const email = data.get("email")
+    const password = data.get("password")
+
+    try {
+      const response = await api.post("/api/register_enterprise/", { name, cnpj, email, password, phone_number });
+      console.log(response.data);
+      history.push("/feed")
+    } catch (err) {
+        window.alert("Seu email e cnpj devem ser únicos")
+    }
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    createEnterprise(event)
+    /*
+    const enterprise = new Enterprise(
+      data.get("nome"),
+      data.get("cnpj"),
+      data.get("Telefone"),
+      data.get("email"),
+      data.get("password")
+    );
+
+    var success = enterprise.createEnterprise();
+    */
+    /*
     console.log({
       email: data.get("email"),
       password: data.get("password"),
     });
+    */
   };
 
   return (

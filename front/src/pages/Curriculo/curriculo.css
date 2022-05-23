@@ -1,0 +1,101 @@
+.main {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 90px 0 90px 0;
+    background-color:white;
+}
+  
+  .caixa{
+    border-color: black;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    top: 100%;
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 0px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(174, 177, 174);
+  }
+  
+  input{
+    width: 100%;
+    height: 50px;
+    box-shadow: inset 0px 0px 25px 0px rgb(238, 234, 234);
+    border-radius: 0px;
+  }
+  
+  .Senha{
+    padding-top: 20px;
+  }
+  
+  button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    height: 50px;
+    background-color: #18A0FB;
+    color: white;
+    border-radius: 0;
+  }
+  
+  .caixa_de_texto{
+    width: 90%;
+    display: flex;
+    margin: 5%;
+  }
+
+  .caixa_de_texto_grande{
+    width: 90%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+    margin-top: 30px;
+  }
+
+  .caixa_de_texto_pequena_esquerda{
+    width: 40%;
+    display: flex;
+    margin: 5%;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  .caixa_de_texto_pequena_direita{
+    width: 40%;
+    display: flex;
+    margin: 55%;
+    justify-content: center;
+    margin-top: -56px;
+    margin-bottom: 0;
+  }
+
+  .descrição{
+    font-size: 25px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .titulo{
+    font-size: 30px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .description{
+    height: 100px;
+  }
+
+  textarea{
+    width: 100%;
+    height: 100px;
+    border-color: black;
+    background-color:white;
+  }

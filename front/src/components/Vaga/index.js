@@ -83,6 +83,9 @@ export default function Vaga(props) {
             </div>
           )}
         </div>
+        <button>
+          Concorrer a vaga
+        </button>
       </div>
     </div>
   );
