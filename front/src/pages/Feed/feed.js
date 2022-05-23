@@ -118,5 +118,5 @@ export default function FeedVagas() {
     fetchData();
   }, []);
 
-  return <Feed vagas={arrayVagass} />;
+  return <Feed vagas={arrayVagas} />;
 }

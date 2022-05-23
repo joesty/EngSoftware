@@ -26,33 +26,33 @@ export default function Vaga({ vaga, onClose = () => {} }) {
             <b>{vaga.city_state}</b>
             <div className="descricao-beneficios">
               <div className="descricao">
-                <p>{vaga.descricao}</p>
+                <p>{vaga.description}</p>
               </div>
               <div className="beneficios">
                 <b>Benefícios</b>
-                {vaga.beneficios.salario && (
+                {vaga.salary && (
                   <div className="linhaBeneficios">
                     <div className="icones">
                       <AttachMoneyIcon />
                     </div>
                     <div className="valorBeneficio">
-                      Salario: R$ {vaga.beneficios.salario}
+                      Salario: R$ {vaga.salary}
                     </div>
                   </div>
                 )}
-                {vaga.email && (
+                {vaga.contact_email && (
                   <div className="linhaBeneficios">
                     <div className="icones">
                       <EmailIcon />
                     </div>
-                    <div className="valorBeneficio">Email: {vaga.email}</div>
+                    <div className="valorBeneficio">Email: {vaga.contact_email}</div>
                   </div>
                 )}
               </div>
 
               <a
                 className="emailFooter"
-                href={`mailto:${vaga.email}?subject=Contato&body=Olá%20como%20vai?%20Segue%20em%20anexo%20meu%20curriculo%20para%20a%20vaga%20de%20${vaga.title}.`}
+                href={`mailto:${vaga.contact_email}?subject=Contato&body=Olá%20como%20vai?%20Segue%20em%20anexo%20meu%20curriculo%20para%20a%20vaga%20de%20${vaga.title}.`}
                 target="_blank"
                 rel="noreferrer noopener"
               >
