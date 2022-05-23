@@ -69,7 +69,7 @@ class RegisterStudentAPI(generics.GenericAPIView):
         user = User.objects.create_user(
             #serializer.data['username'],
             serializer.data['email'],
-            serializer.data['first_name'],
+            serializer.data['name'],
             serializer.data['password']
         )
 
@@ -79,7 +79,7 @@ class RegisterStudentAPI(generics.GenericAPIView):
 
         student = Student.objects.create_student(
                 user_response["id"],
-                request.data["first_name"],
+                request.data["name"],
                 request.data["last_name"],
                 request.data["course"],
                 request.data["cpf"],

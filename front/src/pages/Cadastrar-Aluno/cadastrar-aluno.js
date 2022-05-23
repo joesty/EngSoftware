@@ -47,13 +47,13 @@ export default function CadastrarAluno() {
 
     try {
       const response = await api.post("/api/register_student/", {
-        first_name,
-        last_name,
-        email,
-        course,
-        password,
-        cpf,
-        phone_number,
+        "name" : first_name,
+        "last_name" :last_name,
+        "email": email,
+        "course": course,
+        "password": password,
+        "cpf": cpf,
+        "phone_number": phone_number,
       });
       console.log(response.data);
       history.push("/");
