@@ -27,9 +27,11 @@ const Login = (props) => {
       localStorage.setItem("user", user);
       localStorage.setItem("token", token);
       localStorage.setItem("name", user["name"]);
+      localStorage.setItem("login", true)
       console.log(localStorage.getItem("name"));
       history.push("/");
     } catch (err) {
+      localStorage.setItem("login", false)
       window.alert("Senha ou email incorretos");
     }
   };

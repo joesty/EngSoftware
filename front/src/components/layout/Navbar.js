@@ -1,16 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import Conteiner from "./Conteiner";
 import styles from "./Navbar.module.css";
-
+import { useState } from "react";
 import ufmg from "../../img/UFMG.png";
 
 import { Button } from "@mui/material";
 
 const empresa = true;
-const logado = true;
 
 export default function Navbar(/*props*/) {
+
+  const history = useHistory()
+  const [logado, setLogado] = useState('')
+  const handleClick = (event) =>{
+    localStorage.setItem("login", false)
+    console.log(localStorage.getItem("login"))  
+    localStorage.setItem("login", false)
+    console.log("depois")
+    console.log(localStorage.getItem("login"))
+    setLogado(localStorage.getItem("login"))
+    history.push("/login")
+  }
+
   return (
     <nav className={styles.navbar}>
       <Conteiner>
@@ -34,13 +46,13 @@ export default function Navbar(/*props*/) {
             </li>
           )}
 
-          {logado ? (
-            <li className={styles.branco}>
-              <Button variant="contained" href="/">
+          {logado && (
+            <li className={styles.branco} onClick={handleClick}>
+              <Button variant="contained">
                 Logout
               </Button>
             </li>
-          ) : (
+          )}{!logado && (
             <>
               <li className={styles.branco}>
                 <Button variant="contained" href="/login">
