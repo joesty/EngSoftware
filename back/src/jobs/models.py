@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.db import models
 from uuid import uuid4
 from django.contrib.auth import get_user_model
@@ -115,8 +116,8 @@ class EnterpriseManager(models.Manager):
 
 #empresas
 class Enterprise(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    name = models.CharField(max_length=20, null=False)
+    id = models.UUIDField(default=uuid4, editable=False)
+    name = models.CharField(primary_key=True, max_length=20, null=False)
     cnpj = models.IntegerField(null=False, unique=True)
     user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
 
@@ -137,7 +138,7 @@ class Job_Opportunity(models.Model):
     home_office_help = models.CharField(max_length=20)
     city_state = models.CharField(max_length=20)
     salary = models.DecimalField(max_digits=6, decimal_places=2, null=False)
-    enterprise_id = models.ForeignKey("Enterprise", on_delete=models.CASCADE)
+    name = models.ForeignKey("Enterprise", on_delete=models.CASCADE)
     workload = models.IntegerField(null=False)
 
     def __str__(self):
@@ -154,4 +155,4 @@ class Curriculum(models.Model):
     student_id = models.ForeignKey(Student, on_delete=models.CASCADE)
     escolarity = models.CharField(max_length=255)
     experiences = models.CharField(max_length=1000)
-    skills = models.CharField(max_length=1000, unique=True)
+    skills = models.CharField(max_length=1000)

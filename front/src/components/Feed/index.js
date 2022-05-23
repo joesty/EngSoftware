@@ -14,17 +14,12 @@ export default function Feed(props) {
       <div className="titulo">
           <h2>Encontre sua vaga:</h2>
       </div>
-      <div className="button">
-        <button onClick={handleClick}> 
-          Editar Curriculo 
-        </button>
-      </div>
         {props.vagas.map((vaga) => (
           <div className="vaga">
             <h1>
-              {vaga.cargo} - {vaga.empresa}
+              {vaga.title} - {vaga.name} 
             </h1>
-            <p>{vaga.localizacao}</p>
+            <p>{vaga.city_state}</p>
           </div>
         ))}
     </div>

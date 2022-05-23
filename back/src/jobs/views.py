@@ -27,6 +27,16 @@ class Job_OpportunityViewSet(viewsets.ModelViewSet):
         queryset = Job_Opportunity.objects.all()
         serializer_class = Job_OpportunitySerializer
 
+        def post(self, request, *args, **kwargs):
+            serializer = self.get_serializer(data=request.data)
+            enterprise = Enterprise.objects.filter(enterprise_id=request.data['enterprise_id'])
+            job = Job_Opportunity.objects.create_job(
+                request.data, enterprise['id']
+            )
+            job.save()
+            print(enterprise)
+            return enterprise['id']
+
 
 class InterestViewSet(viewsets.ModelViewSet):
         queryset = Interest.objects.all()
