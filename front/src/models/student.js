@@ -12,8 +12,8 @@ class Student{
         this.password = password;   
     }
     async createUser(){
-        api.post("/students/",{ 
-            name: this.name,
+        api.post("/api/register_student/",{ 
+            first_name: this.name,
             last_name: this.last_name,
             email: this.email,
             course: this.course,
@@ -22,8 +22,10 @@ class Student{
             phone_number: this.tel
         }).then(function (response){
             console.log(response)
+            return("true")
         }).catch(function (error){
             console.log(error)
+            return("false")
         });
     };
 }

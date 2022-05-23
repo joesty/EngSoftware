@@ -147,3 +147,11 @@ class Job_Opportunity(models.Model):
 class Interest(models.Model):
     job_id = models.ForeignKey("Job_Opportunity", on_delete=models.CASCADE)
     student_id = models.ForeignKey("Student", on_delete=models.CASCADE)
+
+
+
+class Curriculum(models.Model):
+    student_id = models.ForeignKey(Student, on_delete=models.CASCADE)
+    escolarity = models.CharField(max_length=255)
+    experiences = models.CharField(max_length=1000)
+    skills = models.CharField(max_length=1000, unique=True)

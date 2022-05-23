@@ -1,7 +1,10 @@
 .vaga {
     border-style: groove;
-  }
-
-  .titulo{
-      
-  }
+}
+.exterior{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.button{
+    padding-left: auto;
+}

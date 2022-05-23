@@ -15,8 +15,8 @@ class Job_Opportunity{
         this.description = description;
         this.enterprise_id = enterprise_id;
     }
-    async createUser(){
-        api.post("/job_opportunity/",{ 
+    async createJob(){
+        api.post("/jobs/",{ 
             tile: this.tile,
             salary: this.salary,
             workload: this.workload,
@@ -27,12 +27,12 @@ class Job_Opportunity{
             home_office_help: this.home_office_help,
             city_state: this.city_state,
             description: this.description,
-            email: this.email,
             enterprise_id: this.enterprise_id
         }).then(function (response){
-            console.log(response)
+            return("true")
         }).catch(function (error){
             console.log(error)
+            return("false")
         });
     };
 }

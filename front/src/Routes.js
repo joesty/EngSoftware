@@ -11,6 +11,7 @@ import Home from "./pages/home/home";
 import CadastrarVaga from "./pages/Cadastrar-Vaga/index";
 import PaginaVaga from "./pages/Vaga/vaga";
 import FeedVagas from "./pages/Feed/feed";
+import Curriculo from "./pages/Curriculo/curriculo";
 
 
 /* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
@@ -55,6 +56,10 @@ export default () => {
 
       <Route exact path="/feed">
         <FeedVagas />
+      </Route>
+
+      <Route exact path="/curriculo">
+        <Curriculo/>
       </Route>
     </>
   );

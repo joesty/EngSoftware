@@ -22,8 +22,11 @@ function CadastrarVaga() {
       data.get("city_state"),
       data.get("description")
     );
-    job_opportunity.createUser();
-    history.push("/home");
+    var success = job_opportunity.createJob();
+    if (success)
+      history.push("/home");
+    else
+      console.log("erro")
   };
 
     return (

@@ -136,10 +136,6 @@ class LoginAPI(generics.GenericAPIView):
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         user = authenticate(username=serializer.initial_data['email'], password=serializer.initial_data['password'])
-        if user == None:
-            return response.Response({
-                "user": "error"
-            })
         return response.Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": Token.objects.get_or_create(user=user)[0].key
@@ -150,3 +146,8 @@ class LogoutAPI(generics.GenericAPIView):
     def post(self, request, *args, **kwargs):
         request.user.auth_token.delete()
         return response.Response('Logout')
+
+
+class CurriculumViewSet(viewsets.ModelViewSet):
+    serializer_class = CurriculumSerializer
+    queryset = Curriculum.objects.all()
