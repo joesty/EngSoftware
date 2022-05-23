@@ -117,12 +117,17 @@ class Enterprise(models.Model):
     def __str__(self):
         return self.name
 
-
 ##oportunidades de emoprego
 class Job_Opportunity(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=100, null=False)
     description = models.CharField(max_length=1400, null=False)
+    meal_ticket = models.CharField(max_length=20),
+    health_insurance = models.CharField(max_length=20)
+    transportation_vouchers = models.CharField(max_length=20)
+    study_incentive = models.CharField(max_length=20)
+    home_office_help = models.CharField(max_length=20)
+    city_state = models.CharField(max_length=20)
     salary = models.DecimalField(max_digits=6, decimal_places=2, null=False)
     enterprise_id = models.ForeignKey("Enterprise", on_delete=models.CASCADE)
     workload = models.IntegerField(null=False)
