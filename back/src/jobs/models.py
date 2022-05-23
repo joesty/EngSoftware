@@ -127,7 +127,7 @@ class Enterprise(models.Model):
 
 ##oportunidades de emoprego
 class Job_Opportunity(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    job_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=100, null=False)
     description = models.CharField(max_length=1400, null=False)
     meal_ticket = models.CharField(max_length=20),
@@ -145,5 +145,5 @@ class Job_Opportunity(models.Model):
 
 ##tabela de interesses alunos x oportunidades de emprego.
 class Interest(models.Model):
-    enterprise_id = models.ForeignKey("Enterprise", on_delete=models.CASCADE)
+    job_id = models.ForeignKey("Job_Opportunity", on_delete=models.CASCADE)
     student_id = models.ForeignKey("Student", on_delete=models.CASCADE)
