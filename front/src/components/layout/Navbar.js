@@ -7,6 +7,9 @@ import ufmg from "../../img/UFMG.png";
 
 import { Button } from "@mui/material";
 
+const empresa = true;
+const logado = true;
+
 export default function Navbar(/*props*/) {
   return (
     <nav className={styles.navbar}>
@@ -21,19 +24,36 @@ export default function Navbar(/*props*/) {
             <Button variant="text" href="/">
               Vagas
             </Button>
-            {/* <Link to="/">feed</Link> */}
           </li>
-          <li className={styles.branco}>
-            <Button variant="contained" href="/login">
-              Login
-            </Button>
-            {/* <Link to="/login">Login</Link> */}
-          </li>
-          <li className={styles.branco}>
-            <Button variant="contained" href="/cadastro">
-              Cadastrar
-            </Button>
-          </li>
+
+          {empresa && (
+            <li className={styles.items}>
+              <Button variant="text" href="/cadastrar_vaga">
+                Cadatrar Vagas
+              </Button>
+            </li>
+          )}
+
+          {logado ? (
+            <li className={styles.branco}>
+              <Button variant="contained" href="/">
+                Logout
+              </Button>
+            </li>
+          ) : (
+            <>
+              <li className={styles.branco}>
+                <Button variant="contained" href="/login">
+                  Login
+                </Button>
+              </li>
+              <li className={styles.branco}>
+                <Button variant="contained" href="/cadastro">
+                  Cadastrar
+                </Button>
+              </li>
+            </>
+          )}
         </ul>
       </Conteiner>
     </nav>

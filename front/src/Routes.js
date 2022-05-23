@@ -6,12 +6,10 @@ import CadastrarAluno from "./pages/Cadastrar-Aluno/cadastrar-aluno";
 import CadastrarEmpresa from "./pages/Cadastrar-Empresa/cadastrar-empresa";
 import Cadastro from "./pages/cadastro";
 import CadastroConfirmado from "./pages/cadastro_confirmado";
-import Home from "./pages/home/home";
 import PaginaVaga from "./pages/Vaga/vaga";
 import FeedVagas from "./pages/Feed/feed";
 import Curriculo from "./pages/Curriculo/curriculo";
-import CadastrarVaga from "./pages/Cadastrar-Vaga/index"
-
+import CadastrarVaga from "./pages/Cadastrar-Vaga/index";
 
 /* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 export default () => {
@@ -42,11 +40,7 @@ export default () => {
       </Route>
 
       <Route exact path="/cadastrar_vaga">
-        <CadastrarVaga/>
-      </Route>
-
-      <Route exact path="/home">
-        <Home />
+        <CadastrarVaga />
       </Route>
 
       <Route exact path="/vaga">
@@ -58,7 +52,7 @@ export default () => {
       </Route>
 
       <Route exact path="/curriculo">
-        <Curriculo/>
+        <Curriculo />
       </Route>
     </>
   );

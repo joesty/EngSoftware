@@ -56,7 +56,7 @@ export default function CadastrarAluno() {
         phone_number,
       });
       console.log(response.data);
-      history.push("/feed");
+      history.push("/");
     } catch (err) {
       window.alert("Seu email e cpf devem ser únicos");
     }

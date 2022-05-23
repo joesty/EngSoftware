@@ -1,0 +1,12 @@
+.cadastro_div {
+  height: 80vh;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao_cadastro {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
