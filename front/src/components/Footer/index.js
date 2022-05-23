@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import { Typography } from "@mui/material";
-import { Link } from "react-router-dom";
 
 import {
   FaFacebook,
@@ -9,24 +7,6 @@ import {
   FaWhatsapp,
   FaLinkedinIn,
 } from "react-icons/fa";
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="#">
-        Match Vagas UFMG
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 export default function Footer() {
   return (
