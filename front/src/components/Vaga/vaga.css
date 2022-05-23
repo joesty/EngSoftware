@@ -85,20 +85,3 @@
   align-items: center;
   border-radius: 30%;
 }
-
-.close ::after,
-::before {
-  content: "";
-  position: absolute;
-  width: 2.5px;
-  background-color: #000;
-}
-::before {
-  transform: rotate(45deg);
-}
-::after {
-  transform: rotate(-45deg);
-}
-
-.content_modal {
-}

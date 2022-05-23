@@ -10,9 +10,10 @@ import CloseIcon from "@mui/icons-material/Close";
 // import MedicalServicesIcon from "@mui/icons-material/MedicalServices";
 
 export default function Vaga({ vaga, onClose = () => {} }) {
-  // console.log(props);
+  console.log(vaga);
+  console.log(onClose);
   return (
-    <div className="modal" onClick={onClose}>
+    <div className="modal">
       <div className="conteiner_modal">
         <button className="close" onClick={onClose}>
           <CloseIcon />

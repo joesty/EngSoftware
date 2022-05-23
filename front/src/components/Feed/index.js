@@ -11,8 +11,8 @@ export default function Feed(props) {
       <div className="titulo">
         <h2>Encontre sua vaga:</h2>
       </div>
-      {props.vagas.map((vaga) => {
-        return <Modal vaga={vaga} />;
+      {props.vagas.map((vaga, index) => {
+        return <Modal key={index} vaga={vaga} />;
       })}
     </div>
   );
