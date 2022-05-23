@@ -27,5 +27,9 @@ router.register(r'enterprises', Job_OpportunityViewSet)
 router.register(r'enterprises', InterestViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('api/register_student/', RegisterStudentAPI.as_view(), name='student_register'),
+    path('api/register_enterprise/',RegisterEnterpriseAPI.as_view(), name='enterprise_register'),
+    path('api/login/', LoginAPI.as_view(), name='login'),
+    path('api/logout/', LogoutAPI.as_view(), name='logout')
 ]

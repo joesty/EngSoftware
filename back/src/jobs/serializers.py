@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from jobs.models import *
+from django.contrib.auth.models import User
 
 ##jasonify files
 
@@ -32,3 +33,17 @@ class InterestSerializer(serializers.ModelSerializer):
         model = Interest
         fields = '__all__'
 
+class RegisterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MyUser
+        fields = '__all__'
+
+class LoginSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MyUser
+        fields = '__all__'
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MyUser
+        fields = ("id", "email")

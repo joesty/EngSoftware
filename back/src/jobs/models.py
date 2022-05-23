@@ -1,29 +1,112 @@
-from uuid import uuid4
 from django.db import models
+from uuid import uuid4
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
+##User = get_user_model()
 # Create your models here.
 
 
+
+
+##Administrador da classe de autenticação
+class MyUserManager(BaseUserManager):
+    def create_user(self, email, password):
+        if not email:
+            raise ValueError("User must have an email address")
+
+        user = self.model(
+            email = self.normalize_email(email)
+        )
+
+        user.set_password(password)
+        user.save(using=self._db)
+
+        return user
+
+    def create_superuser(self, email, password=None):
+        """
+        Creates and saves a superuser with the given email, date of
+        birth and password.
+        """
+        user = self.create_user(
+            email,
+            password=password,
+        )
+
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
+
+##Classe customizada de autenticação, usando apenas e-mail
+class MyUser(AbstractBaseUser):
+    email = models.EmailField(verbose_name='email address', max_length=255, unique=True)
+
+    USERNAME_FIELD = "email"
+
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=False)
+    
+    objects = MyUserManager()
+
+    def __str__(self):
+        return self.email
+
+    def has_perm(self, perm, obj=None):
+        "Does the user have a specific permission?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    def has_module_perms(self, app_label):
+        "Does the user have permissions to view the app `app_label`?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    @property
+    def is_staff(self):
+        "Is the user a member of staff?"
+        # Simplest possible answer: All admins are staff
+        return self.is_admin
+
+
+
+##Modelo Cursos
 class Course(models.Model):
     id = models.AutoField(primary_key=True, null=False)
     name = models.CharField(max_length=40, null=False)
     def __str__(self):
         return self.name
 
+
+class StudentManager(models.Manager):
+    def create_student(self, id, name, last_name, course, cpf, phone_number, user):
+        student = self.model(
+            id, name, last_name, course, cpf, phone_number, user, 
+        )
+        student.save
+        return student
+
+
+##Estudantes
 class Student(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    ##id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     name = models.CharField(max_length=20, null=False)
     last_name = models.CharField(max_length=20, null=False)
-    email = models.EmailField(max_length=40, null=False)
+    ##email = models.EmailField(max_length=40, null=False)
     course = models.CharField(max_length=40, null=False)
-    password = models.CharField(max_length=20, null=False)
+    ##password = models.CharField(max_length=20, null=False)
     cpf = models.IntegerField(null=False, unique=True)
     phone_number = models.IntegerField(null=False)
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+
+    objects = StudentManager()
 
     def __str__(self):
         return self.name
 
 
+
+#empresas
 class Enterprise(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     name = models.CharField(max_length=20, null=False)
@@ -34,6 +117,8 @@ class Enterprise(models.Model):
     def __str__(self):
         return self.name
 
+
+##oportunidades de emoprego
 class Job_Opportunity(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=100, null=False)
@@ -45,6 +130,7 @@ class Job_Opportunity(models.Model):
     def __str__(self):
         return self.id
 
+##tabela de interesses alunos x oportunidades de emprego.
 class Interest(models.Model):
     enterprise_id = models.ForeignKey("Enterprise", on_delete=models.CASCADE)
     student_id = models.ForeignKey("Student", on_delete=models.CASCADE)
